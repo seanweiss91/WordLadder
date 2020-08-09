@@ -1,5 +1,3 @@
-// algorithm: find two words that can be connected through a word ladder
-
 function getRndInteger(min, max) {
   // Return random integer in range [min,max). Note that range excludes max. 
   // Taken from W3 schools page
@@ -134,34 +132,3 @@ function shortestPath(start, target) {
 function isValidNextWord(start, nextWord) {
   return nextWord in nextWords[start];
 }
-
-
-// approach: either pick two words and see if they're connected, or create a word ladder from scratch. I think the second approach makes the most sense. there will be 26*<word length> options per iteration but I think it's fine, better than just testing two random words
-
-// problems: 
-// 1. doesn't check to see if end word has a shorter path from start word... can make a 10 step word ladder from TENT->TINT
-// 2. doesn't check to make sure ladder will be of sufficient length
-// 3. uses scrabble dictionary and words are ridiculous. I also have the OED but i have to a bit more work to convert into js object
-
-
-// can also make it so it looks for a path between two given words
-// this was way game was designed... finding a path between two related words (cold/warm, etc)
-
-// can make an algorithm to check for most efficient path between two words
-// find all next words; start dic to keep track of path from words and their length...
-
-// -----
-// donald knuth did a study of 5-letter word ladders using a fixed dictionary of ~6000 common english words. Could take this approach, I like this quite a bit. need to find a abridged dictionary of common english words
-
-// frequency lists:
-// https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists#English
-// https://english.stackexchange.com/questions/63826/a-dictionary-based-on-word-occurrence-frequencies
-
-// problem is I don't have a very defined goal atm
-
-// could make a dictionary of 5-letter synonyms/antonyms and pick from these
-
-// https://www.wordsapi.com/
-// https://wordnet.princeton.edu/
-  // this is a bunch of database files... 
-  // huh
